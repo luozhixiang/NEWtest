@@ -1,0 +1,72 @@
+<script type="text/javascript">
+    
+	brite.registerComponent("ContactEditComponent",
+		{
+			parent: "#mainContainer",
+			emptyParent:true
+		},
+		{
+			create: function(data){
+				var $e = $($("#tmplUserEditContent").render(data));
+				return $e;
+			},
+			postDisplay:function(data,config){
+				
+			        if(data)this.$element.find('.updateUser').val("Edit");
+				    
+					// --- Create User --- //
+					this.$element.find('.updateUser').click(function(){
+						var userJson = {};
+						userJson.name=$('#nameInput').val();
+						userJson.email=$('#emailInput').val();
+						userJson.pno=$('#phoneNumberInput').val();
+						userJson.title=$('#titleInput').val();
+						var userid=$('#useridInput').val();
+						if(userid==""){
+							brite.dm.create("Users",userJson).done(function(uid){
+								refreshUserComponent();
+							});
+						}else{
+							brite.dm.update("Users",userid,userJson).done(function(uid){
+								refreshUserComponent();
+							});
+						}
+					});		
+								
+		
+					this.$element.delegate(".userCancle","click",function(){
+						refreshUserComponent();
+					});					
+					
+			}
+		});
+		
+</script>
+
+
+<script id="tmplUserEditContent" type="text/html">
+<div class="operateUsers">
+     <div class="groupTit"></div>
+     <div class="userAddDiv"> 
+		    <span class="userAddSpan">Name:&nbsp;</span>
+    		<input id='nameInput' value="${name}" type="text">
+    		<input id='useridInput' value="${id}" type="hidden">
+            <br>
+    		<span class="userAddSpan">Email:&nbsp;</span>
+    		<input id='emailInput' value="${email}" type="text">
+            <br>
+   			<span class="userAddSpan">PhoneNum:&nbsp;</span>
+    		<input id='phoneNumberInput' value="${pno}" type="text">
+          	<br>
+   			<span class="userAddSpan">title:&nbsp;</span>
+    		<input id='titleInput' value="${title}" type="text">
+          	<br>
+     </div>
+     <div class="subbut">
+  		 <input type="button" value="Add" class="addBut updateUser">
+ 		 <input type="button" value="Cancle" class="addBut userCancle">
+     </div>
+</div>
+</script>
+
+

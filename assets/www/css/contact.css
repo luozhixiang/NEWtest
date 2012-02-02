@@ -1,0 +1,339 @@
+* {
+	margin: 0;
+	padding: 0
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
+
+.cz {
+	width:100%;
+	height:38px;
+	background-image:-webkit-gradient(linear, left bottom, left top, color-stop(0, #09101c), color-stop(0.5, #09101d), color-stop(0.51, #222c3d), color-stop(1, #5a6171));
+	background-image:-webkit-gradient(linear, left bottom, left top, from(#a8acb8), to(#f4f5f7));
+}
+.cz input {
+	height:24px;
+	padding:0 5px;
+	border:1px solid #80868F;
+	border-radius:4px;
+	-moz-border-radius:3px;
+	background-image:-webkit-gradient(linear, left bottom, left top, color-stop(0, #edeff3), color-stop(0.5, #edeff3), color-stop(0.51, #ffffff), color-stop(1, #ffffff));
+	color:#333;
+	margin-top:8px;
+	margin-left:10px;
+	cursor:pointer;
+	font-family:"Microsoft yahei", "Lucida Sans Unicode", "Lucida Grande",sans-serif;
+	font-size:12px;
+	box-shadow:0px 1px 1px #646e79
+}
+.cz input:hover {
+	background-image:-webkit-gradient(linear, left bottom, left top, color-stop(0, #1e4ee1), color-stop(0.5, #1e4ee1), color-stop(0.51, #416ae5), color-stop(1, #7c98ed));
+	color:#eee;
+	text-shadow:2px 2px 2px #838896
+}
+
+.clear {
+	clear: both;
+	line-height: 0;
+	height: 0;
+	overflow: hidden
+}
+
+.addBut {
+	height:24px;
+	padding:0 15px;
+	border:1px solid #b6b6b6;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	background-image:-webkit-gradient(linear, left bottom, left top, color-stop(0, #ccc), color-stop(0.5, #ccc), color-stop(0.51, #ddd), color-stop(1, #ddd));
+	color:#333;
+	margin-left:10px;
+	cursor:pointer;
+	
+	font-family:"Microsoft yahei", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size:12px;
+	float:right;
+	margin:0 27px 10px 0
+}
+.addBut:hover {
+	background-image:-webkit-gradient(linear, left bottom, left top, color-stop(0, #1e4ee1), color-stop(0.5, #1e4ee1), color-stop(0.51, #416ae5), color-stop(1, #7c98ed));
+	color:#eee;
+}
+
+.addButs {
+	height: 24px;
+	padding: 0 15px;
+	border: 1px solid #b6b6b6;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ccc),
+		color-stop(0.5, #ccc), color-stop(0.51, #ddd), color-stop(1, #ddd) );
+	color: #333;
+	margin-left: 10px;
+	cursor: pointer;
+	box-shadow: 2px 2px 1px #ccc;
+	font-family: "Microsoft yahei", "Lucida Sans Unicode", "Lucida Grande",
+		sans-serif;
+	font-size: 12px;
+}
+
+.addButt {
+	height: 24px;
+	padding: 0 15px;
+	border: 1px solid #b6b6b6;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ccc),
+		color-stop(0.5, #ccc), color-stop(0.51, #ddd), color-stop(1, #ddd) );
+	color: #333;
+	margin-left: 10px;
+	cursor: pointer;
+	box-shadow: 2px 2px 1px #ccc;
+	font-family: "Microsoft yahei", "Lucida Sans Unicode", "Lucida Grande",
+		sans-serif;
+	font-size: 12px;
+	float: right;
+	margin-right: 126px;
+	margin-bottom: 10px
+}
+.addButs:hover {
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #1e4ee1),
+		color-stop(0.5, #1e4ee1), color-stop(0.51, #416ae5),
+		color-stop(1, #7c98ed) );
+	color: #eee;
+}
+
+
+/***********UserComponent---start********************/
+.operateUsers {
+	width:698px;
+	height:auto;
+	overflow:hidden;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	margin:20px auto;
+	border:1px solid #80868f;
+	
+	font-family:"Microsoft yahei", "Lucida Sans Unicode", "Lucida Grande",sans-serif;
+	font-size:12px;
+	line-height:24px;
+	background:#fff;
+	color:#333;
+}
+
+.groupTit {
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	background-image:-webkit-gradient(linear, left bottom, left top, from(#a8acb8), to(#f4f5f7));
+	color:#717880;
+	font-weight:bold;
+	border-bottom:1px solid #80868f;
+	text-shadow:1px 1px 1px #eee;
+}
+
+.operateUsers .userAddDiv {
+	width:280px;
+	margin:10px auto;
+	height:auto;
+	overflow:auto;
+	margin-top:13px
+}
+
+.operateUsers .userAddDiv div {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 10px
+}
+
+.subbut {
+	width:300px;
+	margin:0 auto
+}
+
+.operateUsers .userAddDiv span.userAddSpan {
+	width:80px;
+	text-align:right;
+	display:block;
+	float:left;
+}
+
+.operateUsers .userAddDiv input {
+	width:180px;
+	float:left;
+	height:18px
+}
+
+.operateUsers .userAddDiv input.addGroupToUser {
+	width: 90px;
+	float: left;
+	height: 20px
+}
+
+.operateUsers .userAddDiv .addUserGroupList {
+	width: 180px;
+	float: left;
+}
+
+.operateUser {
+	width:698px;
+	height:auto;
+	overflow:hidden;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	margin:20px auto;
+	border:1px solid #80868f;
+	font-family:"Microsoft yahei", "Lucida Sans Unicode", "Lucida Grande",sans-serif;
+	font-size:12px;
+	line-height:24px;
+	
+}
+
+.operateUser .userList {
+	width:698px;
+	height:auto;
+	overflow:auto;
+	border-bottom:1px solid #e6e7eb;
+	background:#e5e7eb;
+}
+
+.operateUser .userTitle {
+	border-bottom: 1px solid #ccc;
+	font-weight: bold;
+}
+
+.operateUser .userTitle span {
+	display: block;
+	float: left
+}
+
+.operateUser .userContect span {
+	display: block;
+	float: left
+}
+
+.operateUser .userNameSpan {
+	float: left;
+	width: 30%;
+	text-indent:10px
+}
+
+.operateUser .userSpanClass {
+	float: left;
+	width: 40%;
+}
+
+.operateUser .operate {
+	float: left;
+	width: 30%;
+	text-align: center
+}
+
+.operateUser .delUser {
+	cursor: pointer;
+}
+
+.operateUser .userContent>div {
+	width:100%;
+	border-top:1px solid #edeff1;
+	border-bottom:1px solid #d7d9db;
+	height:28px;
+	line-height:28px
+}
+
+.operateUser .updateExistUser {
+	cursor: pointer;
+}
+
+.operateUser .delUser {
+	cursor: pointer;
+}
+
+.operateUser .viewDetail {
+	cursor: pointer;
+}
+
+/***********UserComponent---end********************/
+
+
+.operateUserPrompt {
+	width:500px;
+	height:auto;
+	overflow:hidden;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	margin:20px auto;
+	border:1px solid #80868f;
+	font-family:"Microsoft yahei", "Lucida Sans Unicode", "Lucida Grande",sans-serif;
+	font-size:12px;
+	line-height:24px;
+	z-index:22;
+	position: absolute;
+	top: 70px;
+	left: 30%;
+}
+
+
+.usergroup {
+	width:240px;
+	height:auto;
+	overflow:hidden;
+	background:#e5e7eb;
+	border:1px solid #80868f;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	margin-top:20px;
+	border-left:none;
+	margin-bottom:10px
+}
+
+.usergroup .usergroupTit {
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	background-image:-webkit-gradient(linear, left bottom, left top, from(#a8acb8), to(#f4f5f7));
+	color:#717880;
+	font-weight:bold;
+	border-bottom:1px solid #80868f;
+	text-shadow:1px 1px 1px #eee;
+}
+
+.usergroup li {
+	line-height:28px;
+	height:28px;
+	color:#040404;
+	border-top:1px solid #edeff1;
+	border-bottom:1px solid #d7d9db;
+	text-indent:10px;
+	cursor:pointer
+}
+
+.usergroup ul {
+	margin-bottom: 10px
+}
+
+.usergroup li:after {
+	content: ">";
+	display: block;
+	float: right;
+	margin-right: 10px;
+}
+
+
+#notTransparentScreen{
+	position:absolute;
+	left:0;right:0;bottom:0;top:0;
+	background:#000000;
+	opacity:0.3;
+	filter:alpha(opacity=30);
+	z-index:18;
+}
+
+

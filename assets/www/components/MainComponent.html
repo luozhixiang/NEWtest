@@ -1,0 +1,26 @@
+<!-- Welcome Component -->
+<script type="text/javascript">
+
+	snow.ui.registerComponent("welcome",{
+		ctx: {
+			parent:"#container",
+			emptyParent:true
+		},
+		
+		build: function(ctx){
+			return $("#tmpl-welcome").tmpl();
+		},
+		postDisplay:function(ctx){
+			snow.ui.display('tag',{});
+			snow.ui.display('todo',{});
+		}
+	});
+
+</script>
+<!--  /Welcome Component -->
+
+
+<script id="tmpl-welcome" type="text/html">
+	<h2 style="text-align:center">Todo application</h2>
+	<div id="todoContainer"></div>
+</script>

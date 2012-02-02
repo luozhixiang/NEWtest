@@ -1,0 +1,85 @@
+<script type="text/javascript">
+    
+	brite.registerComponent("ContactListComponent",
+		{
+			parent: "#mainContainer",
+			emptyParent:true
+		},
+		{
+			create: function(data){
+				var json = {};
+				json.users = data;
+				var $e = $($("#tmplUserContent").render(json));
+				return $e;
+			},
+			postDisplay:function(data,config){
+                    var $e = this.$element;	
+                    
+					$e.delegate(".addNewUser","click",function(){
+						brite.display('ContactEditComponent');
+					});
+								
+					$e.delegate(".updateExistUser","click",function(){
+						var objRef = $(this).bObjRef("Users");
+						if (objRef){
+							brite.dm.get("Users",objRef.id).done(function(user){
+								brite.display('ContactEditComponent',user);
+							});
+						}
+					});	
+						
+					$e.delegate(".viewDetail","click",function(){
+						var objRef = $(this).bObjRef("Users");
+						if (objRef){
+							brite.dm.get("Users",objRef.id).done(function(user){
+								brite.display('ContactViewComponent',user);
+							});
+						}
+					});		
+						
+					// --- delete User --- //
+					$e.delegate(".delUser","click",function(){
+						var objRef = $(this).bObjRef("Users");
+						if (objRef){
+							brite.dm.remove("Users",{id:objRef.id}).done(function(){refreshUserComponent();});
+						}
+					});
+					
+			}
+		});
+		
+</script>
+
+
+<script id="tmplUserContent" type="text/html">
+<div class="operateUser">
+  <div class="cz">
+  	<input type="button" class="addNewUser" value="Add Contact">
+  </div>
+  <div class="userList">
+    <div class="userTitle"> 
+      <span class="userNameSpan">Name</span>
+      <span class="userSpanClass">Email</span>
+      <span class="operate">&nbsp;</span>
+      <div class="clear"></div>
+    </div>
+    <div class="userContent">
+	 {{each users}}
+      <div data-obj_type="Users" data-obj_id="${id}" >
+		<span class="userNameSpan">${name}</span>
+		<span class="userSpanClass">{{if email}}${email}{{else}}&nbsp;{{/if}}</span>
+		<span class="operate">
+			<span class='delUser'>X</span>
+			<span>&nbsp;</span>
+			<span class='updateExistUser'>update</span>
+			<span>&nbsp;</span>
+			<span class='viewDetail'>detail</span>
+		</span>
+        <div class="clear"></div>
+      </div>
+	{{/each}}
+    </div>
+  </div>
+</div>
+</script>
+

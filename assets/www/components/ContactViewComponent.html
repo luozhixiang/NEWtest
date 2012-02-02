@@ -1,0 +1,51 @@
+<script type="text/javascript">
+    
+	brite.registerComponent("ContactViewComponent",
+		{
+			parent: "body"
+		},
+		{
+			create: function(data){
+				$("body").append("<div id='notTransparentScreen'></div>");
+		        var html = $("#tmplUserViewContent").render(data);
+		        var $e = $(html);
+		        return $e;	
+			},
+			postDisplay:function(data,config){
+				var $e = this.$element;
+				this.$element.delegate(".cancleprompt","click",function(){
+			    	$("body").find("#notTransparentScreen").remove();
+			    	$e.bRemove();
+				});					
+					
+			}
+		});
+		
+</script>
+
+
+<script id="tmplUserViewContent" type="text/html">
+<div class="operateUserPrompt operateUsers">
+     <div class="groupTit"></div>
+     <div class="userAddDiv"> 
+		    <span class="userAddSpan">Name:&nbsp;</span>
+			<span class="userAddSpan">${name}</span>
+    		<input id='useridInput' value="${id}" type="hidden">
+            <br>
+    		<span class="userAddSpan">Email:&nbsp;</span>
+    		<span class="userAddSpan">${email}</span>
+            <br>
+   			<span class="userAddSpan">PhoneNum:&nbsp;</span>
+    		<span class="userAddSpan">${pno}</span>
+          	<br>
+   			<span class="userAddSpan">Title:&nbsp;</span>
+    		<span class="userAddSpan">${title}</span>
+          	<br>
+     </div>
+     <div class="subbut">
+ 		 <input type="button" value="Cancle" class="addBut cancleprompt">
+     </div>
+</div>
+</script>
+
+
